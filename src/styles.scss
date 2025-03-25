@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+body{
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.status-bar{
+    height: env(safe-area-inset-top);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}

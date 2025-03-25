@@ -20,7 +20,10 @@
     "@capacitor/android": "^7.1.0",
     "@capacitor/core": "^7.1.0",
     "@capacitor/ios": "^7.1.0",
+    "@tailwindcss/postcss": "^4.0.15",
+    "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.0.15",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
