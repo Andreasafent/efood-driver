@@ -1,0 +1,192 @@
+<div class="py-10 px-4">
+
+    <div [formGroup]="form"
+        class="flex gap-4 mx-auto card bg-base-100 card-border border-base-300 shadow-sm p-10 max-w-[500px]">
+
+        <div class="text-center">
+            <svg class="w-20 h-20 mx-auto" [class.running]="loading" id="Capa_1" x="0px" y="0px"
+                viewBox="0 0 511.946 511.946" style="enable-background:new 0 0 511.946 511.946;" xml:space="preserve">
+                <g>
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#83DEFF;"
+                        d="M281.795,421.593l-21.209-67.765l-88.738-33.448&#10;&#9;&#9;L70.972,353.828v28.047c0,42.728,34.637,77.365,77.365,77.365h246.4v-37.647H281.795z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#80E0B7;"
+                        d="M296.948,261.236c-4.296,15.929-10.133,31.629-16.67,44.991&#10;&#9;&#9;l-63.361,17.485l-70.651-17.485c2.475-94.162,52.438-139.317,94.931-153.93c15.315-8.213,31.005-11.307,31.005-11.307&#10;&#9;&#9;s20.639,23.254,21.713,23.254c7.938,13.296,10.926,30.641,10.413,49.368l0.014,6.583c0.028,13.525-2.307,26.95-6.899,39.671&#10;&#9;&#9;L296.948,261.236z" />
+                    <circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#77899B;" cx="138.737" cy="451.735"
+                        r="52.706" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#83DEFF;"
+                        d="M485.09,406.534l-65.471-158.118h-55.266&#10;&#9;&#9;c38.335,74.292,37.913,112.941,22.854,173.176c-3.101,5.894-6.412,11.757-9.876,17.625c-4.895,8.293,0.285,18.879,9.846,20.022l0,0&#10;&#9;&#9;L485.09,406.534z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#77899B;"
+                        d="M424.854,217.887v23.487c0,8.062-6.716,14.597-15,14.597&#10;&#9;&#9;h-82.882l74.344-50.085C411.265,199.183,424.854,206.112,424.854,217.887z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFDDCF;"
+                        d="M387.212,105.381c0,34.83-19.72,65.06-48.6,80.14&#10;&#9;&#9;c-12.49,6.521-26.69,10.21-41.76,10.21c-24.17,0-46.12-9.479-62.33-24.939l55.34-102.45l95.94,21.06&#10;&#9;&#9;C386.732,94.581,387.212,99.931,387.212,105.381z" />
+                    <path style="fill:#FFCBBE;"
+                        d="M385.802,89.4c-2.77,0.601-5.65,0.91-8.59,0.91h-61.76c-3.09,10.271-7.76,21.95-14.8,33.29&#10;&#9;&#9;c-15.72,25.37-38.39,41.47-66.13,47.19c-17.26-16.45-28.02-39.681-28.02-65.41c0-41.63,28.15-76.68,66.45-87.15&#10;&#9;&#9;c7.61-2.09,15.63-3.2,23.9-3.2C341.302,15.03,378.252,47.121,385.802,89.4z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#2ECEFB;"
+                        d="M192.123,459.236c10.029,0,17.089-10.587,13.372-20.349&#10;&#9;&#9;c-10.574-27.777-36.477-47.411-66.755-47.411c-30.277,0-56.186,19.633-66.763,47.41c-3.717,9.762,3.342,20.35,13.372,20.35H192.123&#10;&#9;&#9;z" />
+                    <circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#77899B;" cx="439.925" cy="451.737"
+                        r="52.694" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#2ECEFB;"
+                        d="M491.933,441.254c9.412-3.463,12.382-15.836,5.524-23.715&#10;&#9;&#9;c-19.515-22.418-50.604-31.9-79.019-21.446c-28.415,10.454-45.952,37.826-46.288,67.546c-0.118,10.445,10.163,17.945,19.576,14.482&#10;&#9;&#9;L491.933,441.254z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#EAAA83;"
+                        d="M146.266,301.123h120.647c24.853,0,45,20.147,45,45v62.882&#10;&#9;&#9;h-52.706v-40.177c0-8.284-6.716-15-15-15h-97.941V301.123z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#77899B;"
+                        d="M319.442,421.593h-45.177c-8.317,0-15.059-6.742-15.059-15.059&#10;&#9;&#9;v0c0-8.317,6.742-15.059,15.059-15.059h45.177c8.317,0,15.059,6.742,15.059,15.059v0&#10;&#9;&#9;C334.501,414.851,327.759,421.593,319.442,421.593z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#36D49B;"
+                        d="M386.543,229.613c0,8.051-5.2,15.53-13.35,18.021l-20.26,6.189&#10;&#9;&#9;l-16.86,5.16c-16.21,4.96-33.4,5.83-50.03,2.53l-52.21-10.37c-10.42-2.07-17.11-12.37-14.65-22.8&#10;&#9;&#9;c2.34-9.94,12.41-16.03,22.42-14.04l42.1,8.36c16.49,3.27,33.53,2.449,49.62-2.4l8.03-2.42l20.89-6.29&#10;&#9;&#9;c9.73-2.93,20.02,2.37,23.29,11.99C386.213,225.553,386.543,227.603,386.543,229.613z" />
+                    <ellipse style="fill:#FFA1AC;" cx="326.209" cy="124.827" rx="29.355" ry="23.377" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FF8A98;"
+                        d="M377.212,60.211h-77.53c-4.8,0-8.94,3.41-9.82,8.13&#10;&#9;&#9;c-1.72,9.2-5.73,24.81-14.78,39.38c-1.67,2.7-3.52,5.37-5.56,7.95c-81.45-21.71-7.59-100.98-7.59-100.98&#10;&#9;&#9;c3.93-1.609,7.98-2.96,12.14-4.04c7.88-2.06,16.14-3.149,24.64-3.149c31.6,0,68,13.46,86.27,36.399&#10;&#9;&#9;C390.222,50.481,385.632,60.211,377.212,60.211z" />
+                    <path style="fill:#FD5C6F;"
+                        d="M269.522,115.671c-11.05,14.02-27.7,25.6-52.7,27.17c-7.5,0.47-14.23-4.601-15.74-11.97&#10;&#9;&#9;c-1.39-6.801-2.11-13.851-2.11-21.08c0-43.181,26.08-80.101,62.96-95.101C250.062,43.091,239.552,86.841,269.522,115.671z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FF8A98;"
+                        d="M146.272,195.73v158.12h-37.92&#10;&#9;&#9;c-124.5-52.68-38.81-184.25-38.81-184.25l8.96-3.979L146.272,195.73z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FD5C6F;"
+                        d="M108.352,353.851h-52.61c-24.85,0-45-20.14-45-45V195.73&#10;&#9;&#9;l58.8-26.13C63.332,227.721,63.002,314.9,108.352,353.851z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FD5C6F;"
+                        d="M146.272,180.501v15.229h-78.9&#10;&#9;&#9;c-42.64-28.09,6.82-60.229,6.82-60.229h27.08C126.122,135.501,146.272,155.65,146.272,180.501z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#F43D5C;"
+                        d="M74.192,135.501c-2.51,15.069-5.44,36.42-6.82,60.229h-56.63&#10;&#9;&#9;v-15.229c0-24.851,20.15-45,45-45H74.192z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FBF198;"
+                        d="M116.152,263.501c0,20.79-16.86,37.649-37.65,37.649&#10;&#9;&#9;c-0.64,0-1.28-0.02-1.92-0.05c-47.56-30.47-10.68-72.52-9.97-73.32c0.01-0.01,0.01-0.01,0.01-0.01c3.74-1.25,7.73-1.92,11.88-1.92&#10;&#9;&#9;C99.292,225.851,116.152,242.711,116.152,263.501z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#F4E74D;"
+                        d="M76.582,301.101c-19.9-1-35.73-17.45-35.73-37.6&#10;&#9;&#9;c0-16.641,10.8-30.761,25.77-35.73C66.952,252.681,69.642,278.351,76.582,301.101z" />
+                    <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFDDCF;"
+                        d="M386.543,229.613c0,8.051-5.2,15.53-13.35,18.021l-20.26,6.189&#10;&#9;&#9;l-11.58-35.979l20.89-6.29c9.73-2.93,20.02,2.37,23.29,11.99C386.213,225.553,386.543,227.603,386.543,229.613z" />
+                </g>
+                <g>
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M385.5,421.59c-103.713,0-103.672,0.095-103.75-0.17" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M244.21,353.83H70.97v28.04c0,14.31,3.89,27.71,10.66,39.21" />
+
+                    <line
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="311.92" y1="459.24" x2="372.33" y2="459.24" />
+
+                    <line
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="147.67" y1="459.23" x2="281.75" y2="459.24" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M146.27,306.23c2.237-76.959,35.856-124.512,78.24-146.71" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M296.46,263.02c-3.96,14.27-9.12,28.28-14.9,40.54" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M303.63,195.48c0.991,8.877,0.694,13.91,0.71,24.71c0,1.48-0.02,2.96-0.08,4.43" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M190.92,459.23c0,0.01-0.01,0.01-0.01,0.01c-3.64,25.55-25.61,45.2-52.17,45.2s-48.54-19.65-52.18-45.21" />
+
+                    <line
+                        style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="420.82" y1="251.33" x2="484.87" y2="405.99" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M388.06,418.14c0-0.01,0-0.01,0-0.01c14.305-58.671,12.872-95.963-19.88-162.16" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M345.95,255.97h63.91c8.252,0,15-6.525,15-14.6v-23.48c0-11.78-13.59-18.71-23.54-12.01l-18.5,12.47" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M375.12,60.21c7.69,13.29,12.09,28.72,12.09,45.17c0,47.62-36.84,86.64-83.58,90.1c-38.262,2.917-73.594-18.711-89.03-52.67" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M192.126,459.235c10.029,0,17.089-10.587,13.372-20.349c-10.574-27.777-36.477-47.411-66.755-47.411&#10;&#9;&#9;c-30.277,0-56.186,19.633-66.763,47.41c-3.717,9.762,3.342,20.35,13.372,20.35H192.126z" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M491.6,441.38c5.05,25.05-8.76,50.71-33.48,59.81s-51.88-1.51-64.25-23.86" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M491.935,441.253c9.412-3.463,12.382-15.836,5.524-23.715c-19.515-22.418-50.604-31.9-79.019-21.446&#10;&#9;&#9;c-28.415,10.454-45.952,37.826-46.288,67.546c-0.118,10.445,10.163,17.945,19.576,14.482L491.935,441.253z" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M311.92,391.47v-45.35c0-24.854-20.146-45-45-45H146.27v52.71h97.94c8.28,0,15,6.71,15,15V399h2.02" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M319.445,421.592h-45.177c-8.317,0-15.059-6.742-15.059-15.059c0-8.317,6.742-15.059,15.059-15.059h45.177&#10;&#9;&#9;c8.317,0,15.059,6.742,15.059,15.059C334.504,414.85,327.762,421.592,319.445,421.592z" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M241.61,214.302l42.096,8.359c16.489,3.274,33.529,2.451,49.625-2.397l28.919-8.71c9.724-2.929,20.02,2.371,23.288,11.986&#10;&#9;&#9;c3.423,10.074-2.163,20.984-12.338,24.095l-37.12,11.351c-16.215,4.958-33.406,5.825-50.038,2.522l-52.208-10.368&#10;&#9;&#9;c-10.421-2.069-17.111-12.372-14.651-22.801C221.526,218.405,231.599,212.313,241.61,214.302z" />
+
+                    <line
+                        style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="343.32" y1="90.323" x2="343.32" y2="102.323" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M201.089,130.872c1.504,7.363,8.233,12.441,15.733,11.968c54.463-3.434,69.292-54.34,73.04-74.501&#10;&#9;&#9;c0.878-4.723,5.02-8.134,9.824-8.134h77.529c8.42,0,13.012-9.724,7.765-16.31C366.711,20.963,330.311,7.5,298.714,7.5&#10;&#9;&#9;C235.295,7.5,188.111,67.345,201.089,130.872z" />
+
+                    <path
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        d="&#10;&#9;&#9;M10.739,270.685v38.167c0,24.853,20.147,45,45,45h90.529V180.499c0-24.853-20.147-45-45-45H55.739c-24.853,0-45,20.147-45,45&#10;&#9;&#9;v59.692" />
+
+                    <line
+                        style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="146.269" y1="195.734" x2="10.739" y2="195.734" />
+
+                    <circle
+                        style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        cx="78.504" cy="263.499" r="37.647" />
+
+                    <line
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="352.933" y1="253.823" x2="341.353" y2="217.843" />
+                </g>
+            </svg>
+
+            <h2 class="text-2xl font-bold mt-4">Καλώς ήρθες Schumacher</h2>
+            <p class="text-base-content text-opacity-60 mt-2">Είσοδος με τις μπάντες</p>
+        </div>
+
+        <label class="floating-label">
+            <span>Το email σου</span>
+            <input formControlName="email" type="email" placeholder="mail@site.com" class="input input-md w-full" />
+        </label>
+
+        <label class="floating-label">
+            <span>Ο κωδικός σου</span>
+            <input formControlName="password" type="password" placeholder="Password" class="input input-md w-full" />
+        </label>
+
+        @if (errorMessage) {
+            <div role="alert" class="alert alert-error alert-soft justify-center">
+                <span>{{ errorMessage }}</span>
+            </div>
+        }
+
+        <button class="btn btn-primary w-full" [disabled]="form.invalid || loading" (click)="login()">
+            @if (loading) {
+                <span class="loading loading-spinner"></span>
+            } @else {
+                Είσοδος
+            }
+        </button>
+
+        <div class="divider"></div>
+
+        <div class="text-center flex flex-col gap-4">
+            <h4>Θέλεις να κάνεις βόλτες?</h4>
+            <a routerLink="/auth/register" class="btn btn-sm btn-outline btn-primary">Κάνε εγγραφή τώρα</a>
+        </div>
+    </div>
+
+</div>

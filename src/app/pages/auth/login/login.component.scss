@@ -1,0 +1,7 @@
+@import "animate.css/animate.min";
+
+.running {
+    @extend .animate__animated;
+    @extend .animate__bounce;
+    @extend .animate__infinite;
+}

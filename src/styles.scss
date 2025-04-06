@@ -1,11 +1,52 @@
 @import "tailwindcss";
-
-body{
-    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+@import "animate.css/animate.min.css";
+@plugin "daisyui" {
+    themes: efood;
+};
+@plugin "daisyui/theme" {
+    name: "efood";
+    default: true;
+    prefersdark:true;
+    --color-base-100: oklch(12% 0.042 264.695);
+    --color-base-200: oklch(20% 0.042 265.755);
+    --color-base-300: oklch(27% 0.041 260.031);
+    --color-base-content: oklch(96% 0.007 247.896);
+    --color-primary: oklch(57% 0.245 27.325);
+    --color-primary-content: oklch(97% 0.013 17.38);
+    --color-secondary: oklch(64% 0.2 131.684);
+    --color-secondary-content: oklch(98% 0.031 120.757);
+    --color-accent: oklch(51% 0.262 276.966);
+    --color-accent-content: oklch(96% 0.018 272.314);
+    --color-neutral: oklch(20% 0.042 265.755);
+    --color-neutral-content: oklch(98% 0.003 247.858);
+    --color-info: oklch(70% 0.165 254.624);
+    --color-info-content: oklch(28% 0.091 267.935);
+    --color-success: oklch(79% 0.209 151.711);
+    --color-success-content: oklch(26% 0.065 152.934);
+    --color-warning: oklch(85% 0.199 91.936);
+    --color-warning-content: oklch(28% 0.066 53.813);
+    --color-error: oklch(70% 0.191 22.216);
+    --color-error-content: oklch(25% 0.092 26.042);
+    --radius-selector: 2rem;
+    --radius-field: 2rem;
+    --radius-box: 2rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+html{
+    height:100%;
 }
 
-.status-bar{
-    height: env(safe-area-inset-top);
+body {
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    height:100%;
+}
+
+.status-bar {
+    height: 60px;
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
