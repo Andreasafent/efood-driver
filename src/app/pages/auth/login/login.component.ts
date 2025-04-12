@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { finalize } from 'rxjs';
@@ -13,6 +13,7 @@ import { finalize } from 'rxjs';
 export class LoginComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   public loading = false;
   public errorMessage = '';
@@ -33,10 +34,14 @@ export class LoginComponent {
       .pipe(finalize(()=>this.loading = false))
       .subscribe(
         (response)=>{
-          console.log(response);
+          if(response.success && response.data){
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('user', JSON.stringify(response.data.user));
+            
+            this.router.navigate(['/dashboard']);
+          }
         },
         (response)=>{
-          console.error(response.error.message);
           this.errorMessage = response.error?.message || 'An error occurred';
         }
     );
