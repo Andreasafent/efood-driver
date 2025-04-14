@@ -11,5 +11,15 @@ export function httpInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn):
         });
     }
 
+    const location = localStorage.getItem('location');
+    if (location) {
+        const { latitude, longitude } = JSON.parse(location);
+        req = req.clone({
+            setHeaders: {
+                'X-Location': `${latitude},${longitude}`,
+            },
+        });
+    }
+
     return next(req);
 }

@@ -22,7 +22,8 @@
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                 <ng-icon name="heroUserCircle" size="24"></ng-icon>
             </div>
-            <div tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-2xl z-1 mt-3 w-52 p-2 shadow flex flex-col gap-2">
+            <div tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-2xl z-1 mt-3 w-52 p-2 shadow flex flex-col gap-2">
                 <div class="">
                     Hello, {{ authService.user?.name }}!
                 </div>
@@ -35,5 +36,28 @@
 </div>
 
 <main>
+    @if(!locationGranted){
+    <div class="flex flex-col gap-4 p-4">
+        <div role="alert" class="alert alert-horizontal bg-base-300">
+            <ng-icon name="heroMapPin" size="24"></ng-icon>
+            <span>We need your location.</span>
+            <div class="">
+                <button (click)="requestLocationPermission()" class="btn btn-sm btn-primary">Allow</button>
+            </div>
+        </div>
+    </div>
+    }
+    @else {
+    <div class="flex flex-col gap-4 p-4">
+        <div role="alert" class="alert alert-horizontal alert-success alert-dash bg-base-300">
+            <ng-icon name="heroMapPin" size="24"></ng-icon>
+            <div>
+                <div class="">Location granted.</div>
+                <div class="text-sm text-gray-500">{{ location.latitude }}, {{ location.longitude }}</div>
+            </div>
+        </div>
+    </div>
+    }
+
     <router-outlet></router-outlet>
 </main>

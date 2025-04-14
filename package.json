@@ -19,6 +19,7 @@
     "@angular/router": "^19.2.0",
     "@capacitor/android": "^7.1.0",
     "@capacitor/core": "^7.1.0",
+    "@capacitor/geolocation": "^7.1.1",
     "@capacitor/ios": "^7.1.0",
     "@ng-icons/core": "^31.2.0",
     "@ng-icons/heroicons": "^31.2.0",
