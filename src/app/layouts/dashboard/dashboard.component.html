@@ -25,10 +25,10 @@
             <div tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-2xl z-1 mt-3 w-52 p-2 shadow flex flex-col gap-2">
                 <div class="">
-                    Hello, {{ authService.user?.name }}!
+                    Γειά σου, {{ authService.user?.name }}!
                 </div>
                 <ul>
-                    <li><a (click)="authService.logout()">Logout</a></li>
+                    <li><a (click)="authService.logout()">Αποσύνδεση</a></li>
                 </ul>
             </div>
         </div>
@@ -40,7 +40,7 @@
     <div class="flex flex-col gap-4 p-4">
         <div role="alert" class="alert alert-horizontal bg-base-300">
             <ng-icon name="heroMapPin" size="24"></ng-icon>
-            <span>We need your location.</span>
+            <span>Θέλουμε την τοποθεσία σου.</span>
             <div class="">
                 <button (click)="locationService.requestLocationPermission()" class="btn btn-sm btn-primary">Allow</button>
             </div>
@@ -52,7 +52,7 @@
         <div role="alert" class="alert alert-horizontal alert-success alert-dash bg-base-300">
             <ng-icon name="heroMapPin" size="24"></ng-icon>
             <div>
-                <div class="">Location granted.</div>
+                <div class="">Έχουμε την τοποθεσία σου.</div>
                 <div class="text-sm text-gray-500">{{ locationService.location.latitude }}, {{ locationService.location.longitude }}</div>
             </div>
         </div>

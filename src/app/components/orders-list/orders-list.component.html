@@ -1,5 +1,102 @@
-<p>orders-list works!</p>
+<div class="flex flex-col gap-4">
+    @for (order of orders; track order.id){
+    <div class="">
+        <div class="card bg-base-100 w-full shadow-sm">
+            <figure class="relative">
+                <img [src]="order.store.cover" alt="Shoes" />
 
-@for (order of orders; track order.id){
-    <div class="">Order id: {{ order.id }}</div>
-}
+                <div
+                    class="absolute top-4 left-4 w-16 h-16 bg-base-100 text-2xl font-bold rounded-full flex items-center justify-center">
+                    {{ order.id }}
+                </div>
+
+
+                <div class="absolute top-4 right-4 w-16 h-16 text-black text-3xl rounded-full flex items-center justify-center"
+                    [class.bg-success]="order.payment_method === 'card'"
+                    [class.bg-warning]="order.payment_method === 'cod'">
+                    @if (order.payment_method === 'card') {
+                    <ng-icon name="heroCreditCard" />
+                    } @else {
+                    <ng-icon name="heroCurrencyEuro" />
+                    }
+                </div>
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">
+                    <div class="flex items-center gap-2 grow">
+                        <div class="avatar">
+                            <div class="w-12 rounded-full">
+                                <img [src]="order.store.logo" alt="">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="">{{ order.store.name }}</div>
+                            <a href="#" target="_blank"
+                                class="text-sm font-normal text-white/60 flex items-center gap-1">
+                                <ng-icon name="heroMapPin" />
+                                <div class="">{{ order.store.address }}</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="badge badge-dash badge-success badge-xl">
+                            {{ order.driver_commission | currency }}
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="flex items-center gap-1">
+                            <ng-icon name="heroMap" />
+                            {{ order.store_distance | number: '1.1-1' }} km
+                        </div>
+                    </div>
+                </h2>
+            </div>
+            <div class="card-body bg-base-300">
+                <h2 class="card-title">
+                    <div class="flex items-center gap-2 grow">
+                        <div class="avatar avatar-placeholder">
+                            <div class="bg-neutral text-neutral-content w-12 rounded-full">
+                                <ng-icon name="heroUser" />
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="">{{ order.user.name }}</div>
+                            <a href="#" target="_blank"
+                                class="text-sm font-normal text-white/60 flex items-center gap-1">
+                                <ng-icon name="heroMapPin" />
+                                <div class="">{{ order.address.street }} {{ order.address.number }}, {{
+                                    order.address.postal_code }}</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="flex items-center gap-1">
+                            <ng-icon name="heroMap" />
+                            {{ order.address_distance | number: '1.1-1' }} km
+                        </div>
+                    </div>
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="card-actions justify-end">
+                    <button
+                        [swal]="{
+                            title: 'Θέλεις να αναλάβεις την παραγγελία;',
+                            showCancelButton: true,
+                            cancelButtonText: 'Οχι',
+                            confirmButtonText: 'Ναι',
+                            icon: 'question',
+                            reverseButtons: true
+                        }"
+                        (confirm)="takeOrder(order.id)"
+                        class="btn w-full btn-primary"
+                    >
+                        Θέλω να την αναλάβω
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    }
+</div>

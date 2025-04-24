@@ -23,6 +23,10 @@ export const routes: Routes = [
             {
                 path: '',
                 loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent)
+            },
+            {
+                path: 'order-details/:id',
+                loadComponent: () => import('./pages/order-details/order-details.component').then(c => c.OrderDetailsComponent)
             }
         ]
     },
