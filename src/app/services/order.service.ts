@@ -29,4 +29,16 @@ export class OrderService {
     return this.http.get<HttpResponse<{ order: Order }>>(environment.endpoint + '/orders/details/' + orderId);
   }
 
+  public startDelivery(orderId: string) {
+    return this.http.post<HttpResponse>(environment.endpoint + '/orders/start-delivery', { order_id: orderId });
+  }
+
+  public completePayment(orderId: string) {
+    return this.http.post<HttpResponse>(environment.endpoint + '/orders/complete-payment', { order_id: orderId });
+  }
+
+  public completeDelivery(orderId: string) {
+    return this.http.post<HttpResponse>(environment.endpoint + '/orders/complete-delivery', { order_id: orderId });
+  }
+
 }

@@ -1,1 +1,82 @@
-<pre>{{ order | json }}</pre>
+<div class="flex flex-col gap-4">
+    <div class="rounded-2xl bg-white shadow-sm overflow-hidden mx-4">
+        <google-map 
+            [height]="'200px'" 
+            width="100%"
+            [options]="{
+                center: {
+                    lat: locationService.location.latitude,
+                    lng: locationService.location.longitude
+                },
+                zoom: 14,
+                disableDefaultUI: true,
+            }">
+            <map-marker [position]="{
+                lat: locationService.location.latitude,
+                lng: locationService.location.longitude
+            }" />
+        </google-map>
+    </div>
+
+    <div class="flex flex-col gap-4 px-4">
+        @if (order.status === "processing" && order.shipping_status === "pending") {
+            <button
+                class="btn btn-primary w-full"
+                [disabled]="loader.startDelivery"
+                (click)="startDelivery()"
+            >
+                @if (loader.startDelivery) {
+                    <span class="loading loading-spinner"></span>
+                } @else {
+                    Ξεκινάω την παράδοση
+                }
+            </button>
+         }
+        @if (order.status === "out_for_delivery") {
+
+            @if (order.payment_method === "cod") {
+                <div class="alert alert-gray-200 shadow-sm flex items-center gap-2">
+                    <div class="flex flex-col gap-2">
+                        <span>Πληρωμή με αντικαταβολή</span>
+                        <span>Συνολικό ποσό: {{ order.total_price }} €</span>
+                    </div>
+                </div>
+
+                <button
+                    class="btn btn-success w-full"
+                    [disabled]="loader.completePayment || order.payment_status === 'completed'"
+                    (click)="completePayment()"
+                >
+                    @if (loader.completePayment) {
+                        <span class="loading loading-spinner"></span>
+                    } @else {
+                        Πληρώθηκα
+                    }
+                </button>
+            }
+
+            <button
+                class="btn btn-success w-full"
+                [disabled]="(order.payment_method === 'cod' && order.payment_status !== 'completed') || loader.completeDelivery"
+                (click)="completeDelivery()"
+            >
+                @if (loader.completeDelivery) {
+                    <span class="loading loading-spinner"></span>
+                } @else {
+                    Ολοκληρώνω την παράδοση
+                }
+            </button>
+        }
+
+        @if (order.status === "completed") {
+            <div class="alert alert-gray-200 shadow-sm flex items-center gap-2">
+                <div class="flex flex-col gap-2">
+                    <span>Η παραγγελία ολοκληρώθηκε</span>
+                    <span>Συνολικό ποσό: {{ order.total_price }} €</span>
+                </div>
+            </div>
+        }
+    </div>
+
+    <pre>{{ order | json }}</pre>
+</div>
