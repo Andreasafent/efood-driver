@@ -26,6 +26,37 @@ export class OrderDetailsComponent {
     completePayment: false,
   }
 
+  public marker: Record<string, any> = {
+    driver: {
+      icon: {
+        label: 'D',
+        url: '/images/pin-driver.png',
+        scaledSize: {
+          width: 26,
+          height: 26
+        }
+      },
+    },
+    store: {
+      icon: {
+        url: '/images/pin-store.png',
+        scaledSize: {
+          width: 26,
+          height: 26
+        }
+      },
+    },
+    client: {
+      icon: {
+        url: '/images/pin-client.png',
+        scaledSize: {
+          width: 26,
+          height: 26
+        }
+      },
+    }
+  }
+
 
 
   constructor() {

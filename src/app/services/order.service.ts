@@ -5,6 +5,7 @@ import environment from '../../environments/environment';
 
 type Order = {
   id: number;
+  preparation_time: number;
   created_at: string;
   updated_at: string;
 }
