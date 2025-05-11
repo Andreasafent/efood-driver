@@ -29,6 +29,7 @@
     "@tailwindcss/postcss": "^4.1.3",
     "animate.css": "^4.1.1",
     "daisyui": "^5.0.12",
+    "ngx-socket-io": "^4.8.5",
     "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.19.1",

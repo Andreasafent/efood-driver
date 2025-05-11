@@ -13,5 +13,4 @@ import * as heroicons from '@ng-icons/heroicons/outline';
   ]
 })
 export class AppComponent {
-  title = 'efood-driver';
 }
